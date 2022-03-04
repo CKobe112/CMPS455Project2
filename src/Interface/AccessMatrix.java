@@ -12,8 +12,9 @@ public class AccessMatrix extends Thread {
     static int permissions;
     static String[][] matrix;
     static Lock lock;
+    static Random random = new Random();
     public static String randomDomain(){
-        int r = 1 + (int) (Math.random() * ((1) + 1));
+        int r = random.nextInt(2);
         if (r==0){
             return "A";
         }
@@ -22,7 +23,7 @@ public class AccessMatrix extends Thread {
         }
     }
     public static String randomPermission(){
-        int r = 1 + (int) (Math.random() * ((2 ) + 1));
+        int r = random.nextInt(3);
         if (r==0){
             return "R";
         }
